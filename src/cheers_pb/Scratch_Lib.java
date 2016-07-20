@@ -46,7 +46,10 @@ public class Scratch_Lib {
     }
   
     ///////////////////////************************/////////////////////////////
-    /****************Approximaaaaaaaaaaaaaaaaaaaaaaaaaaaaations****************/
+    /****************Approximaaaaaaaaaaaaaaaaaaaaaaaaaaaaation
+     * @param eps
+     * @param epss*
+     * @return ***************/
     
     //////////////////////////////////////PI wallis////////////////////////// 
     ///////////π/2 = (2/1) * (2/3) * (4/3) * (4/5) * (6/5) * (6/7) * (...)//////
@@ -144,10 +147,12 @@ return (double)pred;
     /////////////////////f returns f(x)/////////////////////////////////////////
     ///////////////////input x & epselon////////////////////////////////////////
     protected double f(double x,double eps){
-        double pi2=Wallis(eps);//half of Pi
-    return (double)(sin(x,eps)+pi2);
+    return (double)(sin(toRadians(x,eps),eps)+Wallis(eps));
     } 
     
+    protected double toRadians(double degree,double eps){
+    return(double)(Wallis(eps)*degree)/90;//x*pi/180 & wallis returns pi/2
+    }   
     /////////////////////Alpha compute the root of any given equation///////////
     ////////////////////f(x)=0//////////////////////////////////////////////////
     ///////According to its graph the root is between 1 & 2/////////////////////
@@ -157,19 +162,17 @@ return (double)pred;
     ////////////////////////////alpha in degrees approximation///////////////////
     protected double Alpha(double eps){  
      double xpre;
-     double xact=1E0;
+     double xact=2.0E0d;
      int i=0; 
-     do
+        do
         {
-        // System.out.println("i="+i);
-        // System.out.println("xpre="+xpre);
-        // System.out.println("xact="+xact);
          xpre= xact;
-         xact=f(xact,eps);
+         xact=f(xpre,eps);
          i++;
-        }while((eps<Max((xpre-xact),(xact-xpre))));
-    return (double)(xact);   //Math.round
-}
+        } while((Max((xpre-xact),(xact-xpre))>eps));
+       
+    return (double)xact;   
+    }
     /////////////////////cosine///////////////////////////////////////////////
     //////////////////*****cos(x)=sin(0.5*pi-x)***************************/////
     protected double cosapp (double x,double eps ){
@@ -182,41 +185,26 @@ return (double)pred;
     //////////////////*****cos(x)=1-x2/2!+x3/3!-x5/5!...***************************/////
     protected double cos(double x,double eps){
     
-    int i=1;
+    int i=2;
+    int j=1;
     double pred,temp;
     double succ=1.d;
     do {
         pred=succ;
-        temp = (double)((double)Power(-1,i)*(double)((double)Power(x,i+1)/(double)Factorial(i+1)));
+        temp = (double)((double)Power(-1,j)*(double)((double)Power(x,i)/(double)Factorial(i)));
+        //System.out.println("(double)((double)Power(-1,"+j+")*(double)((double)Power(x,"+i+")/(double)Factorial("+i+"!");
         succ=pred+temp;
-        //System.out.println("(Power(-1,+"+i+")*(double)(Power("+x+","+i+"+1)/Factorial("+i);
-        //System.out.println(succ); 
-        //System.out.printf("%.10f%n",Max((pred-succ),(succ-pred)));
-       // System.out.printf("%.10f%n",pred);
-        //System.out.println("i="+i);
-        i++;
+        i=i+2;
+        j=j+1;
        }while(Max((pred-succ),(succ-pred))>eps);
     return (double)succ;//Math.round(
     }
     
     /////////////////////////g(x)= 2*R(1-cos(x/2))/////////////////////////////
     protected double length(double R, double eps){
-        double x=cos((double)0.5*Alpha(eps),eps);
-        return (double)(2*R*(1-x));
+        
+     return(double)(2*R*(1-cos((0.5*Alpha(eps)),eps)));
+       
     }
 }
-    
-
-////////////////////////Trapezoidal///////////////////////////////////
-   
-    /*protected double Trapezoidalv1(float c1, float c2, int n,float R,double eps){
-        int h=(int)Math.round(((c1+c2)/n));
-        double x=c1;
-        double sum=(double)(0.5*(g(c1,R,eps)+g(c2,R,eps)));
-        for(int i=1;i<=n-1;i++){
-        sum =sum+(g(x,R,eps)+g(x+h,R,eps))/2;
-        x = x + h;
-        }
-    return(double)(h*sum);
-    }
-}*/
+ 
