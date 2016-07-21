@@ -65,15 +65,13 @@ Arithmetic_Functions fn=new Arithmetic_Functions();
      
     protected double sin (double x,double eps){
         //sin (x) = x - (x3/3!) + (x5/5!) - (x7/7!)...
-        int i=3;
-        int j=1;
+        int i=1;
         double pred;
         double succ=x;
         do{
             pred=succ;
-            succ=pred+(double)(fn.power(-1,j))*(fn.power(x,i)/fn.factorial(i));
-            i+=2;
-            j++;
+            succ=pred+(double)(fn.power(-1,i))*(fn.power(x,2*i+1)/fn.factorial(2*i+1));
+            i++;
         }while(fn.max((pred-succ),(succ-pred))>eps);
         return (double) pred;
     }
@@ -87,16 +85,15 @@ Arithmetic_Functions fn=new Arithmetic_Functions();
     
     protected double cos(double x,double eps){
     //Taylor_cos(x)=1-x2/2!+x4/4!-x6/6!...
-        int i=2;
-        int j=1;
+        int i=1;
         double pred,temp;
         double succ=1.d;
         do {
         pred=succ;
-        temp = (double)((double)fn.power(-1,j)*(double)((double)fn.power(x,i)/(double)fn.factorial(i)));
+        temp = (double)((double)fn.power(-1,i)*(double)((double)fn.power(x,2*i)/(double)fn.factorial(2*i)));
         succ=pred+temp;
-        i+=2;
-        j++;
+        i++;
+        
         }while(fn.max((pred-succ),(succ-pred))>eps);
         return (double)succ;
     } 
