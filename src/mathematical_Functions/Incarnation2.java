@@ -1,33 +1,49 @@
-package cheers_pb;
+package mathematical_Functions;
 /////////////////Incarnation 2 Using The Math lib  ////////////////////////////
 public class Incarnation2 {
 ////////////////////////F returns F(x)=sin(x)+pi/2///////////////////////////
-    protected double Fx (double x){
+    protected double fx_Radians(double x){
         return (double)(0.5*Math.PI)+Math.sin(Math.toRadians(x));
+    }
+    protected double fx_Degrees(double x){
+         return (double)(0.5*Math.PI)+Math.sin(x);
     }
 ////////////////////////F returns the root of F(x)=0///////////////////////////
 ///////////////////F is a genaral approximation for all functions admitting////
 ////////////////////////at least a root////////////////////////////////////////
 ////////////////////////The choice of the intial value is not arbitrary////////
 ////////////////////////x0 is extracted from CFx///////////////////////////////
-    protected double Gx(double eps){
+    protected double fixed_Point_Radians(double eps){
         
-        double pred;
+        double x;
         double x0=2.d;
         int i=0;
         do 
         {
-        pred=x0;
-        x0=Fx(pred);
+        x=x0;
+        x0=fx_Radians(x);
         i++;
-        }while( Math.max((pred-x0),(x0-pred))>eps);
+        }while( Math.abs(x-x0)>eps);
+        return (double)(x0);   
+    }
+    
+    protected double fixed_Point_Degrees(double eps){
+        double x;
+        double x0=2.d;
+        int i=0;
+        do 
+        {
+        x=x0;
+        x0=fx_Degrees(x);
+        i++;
+        }while( Math.abs(x-x0)>eps);
         return (double)(x0);   
     }
 ////////////////////////Hx returns the length solution of ///////////////////////
 ///////////////////////l=2*R*(1-cos(x/2))/////////////////////////////////////////
-    protected double Hx (double R,double eps){
+    protected double compute_Overlap_Distance(double R,double eps){
          
-        return (double)(2*R*(1-Math.cos(0.5*Gx(eps))));
+        return (double)(2*R*(1-Math.cos(0.5*fixed_Point_Radians(eps))));
        
     }
 }

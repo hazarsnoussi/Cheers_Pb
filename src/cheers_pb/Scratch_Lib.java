@@ -7,8 +7,7 @@
   
    An approximation of the root of 
    x-sin(x)-pi/2/=0
-   An approximation via trapezoidal method
-   Trapezoidal 
+   
  */
 package cheers_pb;
 public class Scratch_Lib {

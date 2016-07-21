@@ -3,16 +3,30 @@
 @authors Team D
  */
 package cheers_pb;
+import mathematical_Functions.*;
+import java.util.Scanner;
 public class Cheers_pb {
-	   public static void main(String[] args) { 
+    public static void main(String[] args) { 
+        double eps=1.0E-6;
+        Scanner sc=new Scanner(System.in);
+	System.out.println("Radius=...");    
+	double r= sc.nextDouble();  
+        Trigonometric_Functions trigo=new Trigonometric_Functions();
+        Arithmetic_Functions fn=new Arithmetic_Functions();
+        Overlap_Distance dis=new Overlap_Distance();
+        Level_Performance perf=new Level_Performance();
+        trigo.get_PI_Wallis(eps);
+        fn.get_fixed_Point_Radians(eps);
+        dis.get_Overlap_Distance(r,eps);
+        perf.print_error(r,eps);
+    }
+    
+}
 	   ///////////////***********incarnation 1*********************************///
-           /*Scanner sc=new Scanner(System.in);
-	    system.out.println("Radius=...");    
-	    double R= sc.nextDouble();  
-	    System.out.println("Epselon   
-	    double eps= sc.nextDouble(); 
-            */   
-	   Scratch_Lib O = new Scratch_Lib();
+           
+	   // System.out.println("Epselon   
+	   // double eps= sc.nextDouble();  
+	   /*Scratch_Lib O = new Scratch_Lib();
            Incarnation2 I=new Incarnation2();
            double eps = 1.0E-7; double R=10.d;double z,y,err;
            
