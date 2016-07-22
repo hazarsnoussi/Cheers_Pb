@@ -52,7 +52,7 @@ public class Arithmetic_Functions {
     return(double)x0;   
     } 
    
-    public void get_fixed_Point_Radians(double eps){
-       System.out.println("Value of the fixed point in Radians = "+fixed_Point_Radians(eps));
+    public String get_fixed_Point_Radians(double eps){
+       return String.valueOf(fixed_Point_Radians(eps));
     }  
 }
