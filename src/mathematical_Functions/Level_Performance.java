@@ -35,7 +35,7 @@ public class Level_Performance {
                           "\nExact half of the area= "+Math.PI*Math.pow(r, 2));
         System.out.println("Absolute error= "+fn.max(z*fn.power(r,2)-Math.PI*Math.pow(r, 2),Math.PI*Math.pow(r, 2)-z*fn.power(r,2)));
         System.out.println("============================================================================="); 
-        y=fn.fixed_Point_Radians(eps);
+        y=Odis.fixed_Point_Radians(eps);
         z=Inc.fixed_Point_Radians(eps);
         System.out.println("Approximative value of the fixed point in Radians = "+y
                           + "\nExact value using Math lib with incarnation 2 functions = "+z);   

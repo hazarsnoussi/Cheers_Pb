@@ -38,21 +38,5 @@ public class Arithmetic_Functions {
         return (double)(trigo.sin(trigo.toRadians(x,eps),eps)+trigo.Wallis(eps));
     }  
    
-    protected double fixed_Point_Radians(double eps){  
-    //compute the root of a function conform to the requirements of the intermediate values theorem
-     double x;
-     double x0=2.0E0d;
-     int i=0; 
-        do
-        {
-         x= x0;
-         x0=fx_Radians(x,eps);
-         i++;
-        } while((max((x-x0),(x0-x))>eps));  
-    return(double)x0;   
-    } 
    
-    public String get_fixed_Point_Radians(double eps){
-       return String.valueOf(fixed_Point_Radians(eps));
-    }  
 }

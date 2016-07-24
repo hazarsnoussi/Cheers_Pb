@@ -174,13 +174,13 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         finally{
         if ((r>0)&&(r<=20)){
-        textField2.setText(fn.get_fixed_Point_Radians(eps));
+        textField2.setText(dis.get_fixed_Point_Radians(eps));
         textField3.setText(dis.get_Overlap_Distance(r, eps)); 
         textField4.setForeground(new java.awt.Color(0, 0, 0));
         }
         else {
         textField4.setForeground(new java.awt.Color(255, 0, 51));
-        textField2.setText(fn.get_fixed_Point_Radians(eps));
+        textField2.setText(dis.get_fixed_Point_Radians(eps));
         textField3.setText("0");
         }
                 
