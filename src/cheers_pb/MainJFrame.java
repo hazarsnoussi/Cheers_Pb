@@ -21,6 +21,7 @@ public class MainJFrame extends javax.swing.JFrame {
         button1 = new java.awt.Button();
         textField4 = new java.awt.TextField();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Approximation of Cheers problem");
 
         label1.setFont(new java.awt.Font("Dialog", 1, 18)); 
         label1.setText("Approximation of Cheers Problem");
@@ -152,7 +153,7 @@ public class MainJFrame extends javax.swing.JFrame {
         textField3.setText("0");
         }
         finally{
-        if ((r>0)&&(r<=20)){
+        if ((r>=0)&&(r<=20)){
         textField2.setText(dis.get_fixed_Point_Radians(eps));
         textField3.setText(dis.get_Overlap_Distance(r, eps)); 
         textField4.setForeground(new java.awt.Color(0, 0, 0));
@@ -168,7 +169,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
    
     public static void main(String args[]) {
-      
+    
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -185,7 +186,7 @@ public class MainJFrame extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-       
+                  
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MainJFrame().setVisible(true);
