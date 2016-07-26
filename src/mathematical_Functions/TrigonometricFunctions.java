@@ -4,27 +4,7 @@ package mathematical_Functions;
  * @authors TeamD
  */
 public class TrigonometricFunctions {
-ArithmeticFunctions fn=new ArithmeticFunctions();   
-    protected double Wallis(double eps){
-    //π/2 = (2/1) * (2/3) * (4/3) * (4/5) * (6/5) * (6/7) * (...)
-        double numertator=2;
-        double denumerator=3;
-        int i=2;
-        double predecessor;
-        double successor=2.d;
-        
-        do
-        {
-            predecessor=successor;
-            successor=predecessor*(double)(numertator/denumerator); 
-            if (i%2==0 )
-                numertator+=2;
-                else denumerator+=2;
-            i++;   
-        }
-        while(fn.max((successor-predecessor),(predecessor-successor))>eps);
-    return (double)(2*predecessor);
-    }  
+ArithmeticFunctions fn=new ArithmeticFunctions();    
     public void getPiNilakantah(double eps){
     System.out.println("Approximative value of PI via Nilakantah formula = "+NilakantahPI(eps));
     }
@@ -33,12 +13,12 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
     double successor=3.d;
     double predecessor=0.d;
     int i=2;
-    int j=2;
+  
      do {
         predecessor=successor;
-        successor=predecessor+(double)((double)fn.power(-1,j)*(double)(4/(double)(i*(i+1)*(i+2))));                   
+        successor=predecessor+(double)((double)fn.power(-1,1+i/2)*(double)(4/(double)(i*(i+1)*(i+2))));                   
         i+=2;
-        j++;
+       
      }while(fn.max(predecessor-successor,successor-predecessor)>eps);//||(i>28));
     return (double)predecessor;            
     }
