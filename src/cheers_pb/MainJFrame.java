@@ -11,8 +11,7 @@ public class MainJFrame extends javax.swing.JFrame {
     public MainJFrame() {
         initComponents();
     }
-
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+                          
     private void initComponents() {
 
         label2 = new java.awt.Label();
@@ -31,25 +30,25 @@ public class MainJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("An approximation of cheers problem");
-        setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        setFont(new java.awt.Font("Calibri", 1, 12));
         setLocation(new java.awt.Point(375, 280));
 
-        label2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        label2.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); 
         label2.setText("         The CHEERS project aims to approximate  the distance from which two ");
 
-        label3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        label3.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); 
         label3.setText("identical coasters need to be moved on top of each other such that the area");
 
-        label1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
+        label1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); 
         label1.setText("of the overlapping region is half the area of any one of the coasters.");
 
-        label4.setFont(new java.awt.Font("Algerian", 1, 14)); // NOI18N
+        label4.setFont(new java.awt.Font("Algerian", 1, 14)); 
         label4.setText("Cheers");
 
-        label5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label5.setFont(new java.awt.Font("Dialog", 1, 12)); 
         label5.setText("Radius of the coster in cm : ");
 
-        button1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        button1.setFont(new java.awt.Font("Dialog", 1, 12)); 
         button1.setLabel("Compute");
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,7 +150,7 @@ public class MainJFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
+    }                       
 
     private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
 
@@ -211,7 +210,7 @@ public class MainJFrame extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify                     
+                   
     private java.awt.Button button1;
     private java.awt.Label label1;
     private java.awt.Label label10;
@@ -225,5 +224,5 @@ public class MainJFrame extends javax.swing.JFrame {
     private java.awt.TextField textField1;
     private java.awt.TextField textField2;
     private java.awt.TextField textField3;
-    // End of variables declaration                   
+                  
 }
