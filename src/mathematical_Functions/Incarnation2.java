@@ -1,49 +1,30 @@
 package mathematical_Functions;
 /////////////////Incarnation 2 Using The Math lib  ////////////////////////////
 public class Incarnation2 {
-////////////////////////F returns F(x)=sin(x)+pi/2///////////////////////////
-    protected double fx_Radians(double x){
+    protected double fxRadians(double x){
+    //fxRadians(x)=sin(x)+pi/2
         return (double)(0.5*Math.PI)+Math.sin(Math.toRadians(x));
     }
-    protected double fx_Degrees(double x){
-         return (double)(0.5*Math.PI)+Math.sin(x);
-    }
-////////////////////////F returns the root of F(x)=0///////////////////////////
-///////////////////F is a genaral approximation for all functions admitting////
-////////////////////////at least a root////////////////////////////////////////
-////////////////////////The choice of the intial value is not arbitrary////////
-////////////////////////x0 is extracted from CFx///////////////////////////////
-    protected double fixed_Point_Radians(double eps){
-        
-        double x;
-        double x0=2.d;
-        int i=0;
-        do 
-        {
-        x=x0;
-        x0=fx_Radians(x);
-        i++;
-        }while( Math.abs(x-x0)>eps);
-        return (double)(x0);   
-    }
     
-    protected double fixed_Point_Degrees(double eps){
+////////////////////////returns the root of F(x)-x=0///////////////////////////
+    protected double computeFixedPointRadians(double eps){
         double x;
-        double x0=2.d;
+        double x0=2.d;//not arbitrary 
+                     //but extracted from the graph of F(x)-x=0 
         int i=0;
         do 
         {
         x=x0;
-        x0=fx_Degrees(x);
+        x0=fxRadians(x);
         i++;
         }while( Math.abs(x-x0)>eps);
         return (double)(x0);   
     }
-////////////////////////Hx returns the length solution of ///////////////////////
-///////////////////////l=2*R*(1-cos(x/2))/////////////////////////////////////////
-    protected double compute_Overlap_Distance(double R,double eps){
+   
+///////////////////////returns l=2*R*(1-cos(x/2))/////////////////////////////////////////
+    protected double computeOverlapDistance(double R,double eps){
          
-        return (double)(2*R*(1-Math.cos(0.5*fixed_Point_Radians(eps))));
+        return (double)(2*R*(1-Math.cos(0.5*computeFixedPointRadians(eps))));
        
     }
 }

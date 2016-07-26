@@ -1,10 +1,9 @@
-
 package  mathematical_Functions;
 /**
  *
  * @authors Team D
  */
-public class Arithmetic_Functions {
+public class ArithmeticFunctions {
 //An ArithmeticException exception is thrown if abs(n) > 999999999
     protected double power(double a,int n){
       if (n==0) return 1;
@@ -26,12 +25,9 @@ public class Arithmetic_Functions {
         else return a;
     }
     
-    
-    protected double fx_Radians(double x,double eps){
-        Trigonometric_Functions trigo=new Trigonometric_Functions();
-        //f(x)=sin(x)+pi/2 
-        return (double)(trigo.sin(trigo.toRadians(x,eps),eps)+trigo.Wallis(eps));
+    protected double fxRadians(double x,double eps){
+        //fxRadians(x)=sin(x)+pi/2
+        TrigonometricFunctions trigo=new TrigonometricFunctions();
+        return (double)(trigo.sin(trigo.toRadians(x,eps),eps)+0.5*trigo.NilakantahPI(eps));
     }  
-   
-   
 }
