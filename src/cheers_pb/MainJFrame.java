@@ -157,12 +157,12 @@ public class MainJFrame extends javax.swing.JFrame {
     }                                          
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        double eps=1.0E-6;      
+        double epsilon=1.0E-6;      
         
         OverlapDistance dis=new OverlapDistance(); 
-        double r=0;
+        double radius=0;
         try{
-            r=Double.parseDouble(textField1.getText()); 
+            radius=Double.parseDouble(textField1.getText()); 
              
         }
         catch(NumberFormatException e){
@@ -171,14 +171,14 @@ public class MainJFrame extends javax.swing.JFrame {
             textField3.setText("0");
         }
         finally{
-            if ((r>0)&&(r<=20)){
-            textField2.setText(dis.getFixedPointRadians(eps));
-            textField3.setText(dis.getOverlapDistance(r, eps)); 
+            if ((radius>0)&&(radius<=20)){
+            textField2.setText(dis.getFixedPointRadians(epsilon));
+            textField3.setText(dis.getOverlapDistance(radius, epsilon)); 
             label10.setForeground(new java.awt.Color(0, 0, 0));
             }
             else{
             label10.setForeground(new java.awt.Color(255, 0, 51));
-            textField2.setText(dis.getFixedPointRadians(eps));
+            textField2.setText(dis.getFixedPointRadians(epsilon));
             textField3.setText("0");
             }
         }

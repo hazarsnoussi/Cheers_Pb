@@ -5,10 +5,10 @@ package mathematical_Functions;
  */
 public class TrigonometricFunctions {
 ArithmeticFunctions fn=new ArithmeticFunctions();    
-    public void getPiNilakantah(double eps){
-    System.out.println("Approximative value of PI via Nilakantah formula = "+NilakantahPI(eps));
+    public void getPiNilakantah(double epsilon){
+    System.out.println("Approximative value of PI via Nilakantah formula = "+NilakantahPI(epsilon));
     }
-    protected double NilakantahPI(double eps){
+    protected double NilakantahPI(double epsilon){
     // π=3+(4/2*3*4)-4/(4*5*6)+4/(6*7*8)-4/(8*9*10)...
     double successor=3.d;
     double predecessor=0.d;
@@ -19,7 +19,7 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
         successor=predecessor+(double)((double)fn.power(-1,1+i/2)*(double)(4/(double)(i*(i+1)*(i+2))));                   
         i+=2;
        
-     }while(fn.max(predecessor-successor,successor-predecessor)>eps);//||(i>28));
+     }while(fn.max(predecessor-successor,successor-predecessor)>epsilon);//||(i>28));
     return (double)predecessor;            
     }
      
@@ -27,7 +27,7 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
     return(double)(NilakantahPI(eps)*inDegree)/180;
     }  
      
-    protected double sin (double x,double eps){
+    protected double sin (double x,double epsilon){
         //sin (x) = x - (x3/3!) + (x5/5!) - (x7/7!)...
         int i=1;
         double predecessor;
@@ -36,7 +36,7 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
             predecessor=successor;
             successor=predecessor+(double)(fn.power(-1,i))*(fn.power(x,2*i+1)/fn.factorial(2*i+1));
             i++;
-        }while(fn.max((predecessor-successor),(successor-predecessor))>eps);
+        }while(fn.max((predecessor-successor),(successor-predecessor))>epsilon);
         return (double) predecessor;
     }
    
@@ -52,4 +52,5 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
         }while(fn.max((predecessor-successor),(successor-predecessor))>eps);
         return (double)successor;
     } 
+     
 }

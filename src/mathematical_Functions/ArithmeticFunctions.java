@@ -25,9 +25,9 @@ public class ArithmeticFunctions {
         else return a;
     }
     
-    protected double fxRadians(double x,double eps){
+    protected double fxRadians(double x,double epsilon){
         //fxRadians(x)=sin(x)+pi/2
         TrigonometricFunctions trigo=new TrigonometricFunctions();
-        return (double)(trigo.sin(trigo.toRadians(x,eps),eps)+0.5*trigo.NilakantahPI(eps));
+        return (double)(trigo.sin(trigo.toRadians(x,epsilon),epsilon)+0.5*trigo.NilakantahPI(epsilon));
     }  
 }
