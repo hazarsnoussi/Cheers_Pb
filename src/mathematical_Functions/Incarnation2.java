@@ -1,3 +1,10 @@
+/**
+ * A set of methods to compute the angle and the distance of overlap using 
+ * the predefined methods the class java.lang.Math.
+ * 
+ * @authors TeamD
+ **/
+
 package mathematical_Functions;
 public class Incarnation2 {
     protected double fxRadians(double degrees){

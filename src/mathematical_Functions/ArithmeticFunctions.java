@@ -1,8 +1,11 @@
-package  mathematical_Functions;
 /**
- *
- * @authors Team D
- */
+ * A set of some useful arithmetic functions made form scratch code.
+ * 
+ * @authors TeamD
+ **/
+
+package  mathematical_Functions;
+
 public class ArithmeticFunctions {
 //An ArithmeticException exception is thrown if abs(n) > 999999999
     protected double power(double a,int n){
@@ -28,6 +31,6 @@ public class ArithmeticFunctions {
     protected double fxRadians(double x,double epsilon){
         //fxRadians(x)=sin(x)+pi/2
         TrigonometricFunctions trigo=new TrigonometricFunctions();
-        return (double)(trigo.sin(trigo.toRadians(x,epsilon),epsilon)+0.5*trigo.NilakantahPI(epsilon));
+        return (double)(trigo.sin(trigo.toRadians(x,epsilon),epsilon)+0.5*trigo.nilakantahPI(epsilon));
     }  
 }

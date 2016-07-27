@@ -1,7 +1,8 @@
 /**
- *
- * @authors TeamD
- */
+*A Frame that print  
+*the result of our  approximation (angle and distance of overlap ) for an inputed
+* radius  @authors TeamD
+**/
 package cheers_pb;
 
 import mathematical_Functions.OverlapDistance;

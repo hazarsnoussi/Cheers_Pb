@@ -1,7 +1,12 @@
 /**
- *
- * @authors Team D
- */
+ * A set of methods to test the performance of our approximation for a given 
+ * radius by computing the absolute error between our results and the the 
+ * results based on the class java.lang.Math.
+ * Beside it returns the Java version installed in the current machine, 
+ * its OS name and its version
+ * 
+ * @authors TeamD
+ **/
 package mathematical_Functions;
 import java.util.Scanner;
 
@@ -29,15 +34,19 @@ public class LevelPerformance {
     }
     
     public void print_error(double radius, double epsilon){
+       
         TrigonometricFunctions trigo=new TrigonometricFunctions();
         ArithmeticFunctions fn=new ArithmeticFunctions();
         Incarnation2 Inc=new Incarnation2();
         OverlapDistance Odis= new OverlapDistance();
-        double nilakantahPi = trigo.NilakantahPI(epsilon);
+        double nilakantahPi = trigo.nilakantahPI(epsilon);
+        
+        System.out.println("The Java version is : "+System.getProperty("java.version")+
+       "\nThe Os name and version : "+System.getProperty("os.name")+System.getProperty("os.version"));
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("Values of testing parameters : Radius = "+radius+" & Epselon= "+epsilon);    
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println("Approximation of PI by Nilakantah formula = "+ trigo.NilakantahPI(epsilon)+"\nMath.PI = "+Math.PI);
+        System.out.println("Approximation of PI by Nilakantah formula = "+ trigo.nilakantahPI(epsilon)+"\nMath.PI = "+Math.PI);
         System.out.println("Absolute error =" +fn.max(nilakantahPi-Math.PI,Math.PI-nilakantahPi));
         System.out.println("=============================================================================");  
         System.out.println("Approximation of the half of the area = "+0.5*nilakantahPi*fn.power(radius,2)+

@@ -1,14 +1,19 @@
-package mathematical_Functions;
 /**
- *
+ * A set of trigonometric functions made form scratch code 
  * @authors TeamD
- */
+ **/
+
+package mathematical_Functions;
+
 public class TrigonometricFunctions {
-ArithmeticFunctions fn=new ArithmeticFunctions();    
+    
+ArithmeticFunctions fn=new ArithmeticFunctions();   
+
     public void getPiNilakantah(double epsilon){
-    System.out.println("Approximative value of PI via Nilakantah formula = "+NilakantahPI(epsilon));
+    System.out.println("Approximative value of PI via Nilakantah formula = "+nilakantahPI(epsilon));
     }
-    protected double NilakantahPI(double epsilon){
+    
+    protected double nilakantahPI(double epsilon){
     // π=3+(4/2*3*4)-4/(4*5*6)+4/(6*7*8)-4/(8*9*10)...
     double successor=3.d;
     double predecessor=0.d;
@@ -24,7 +29,7 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
     }
      
     protected double toRadians(double inDegree,double eps){
-    return(double)(NilakantahPI(eps)*inDegree)/180;
+    return(double)(nilakantahPI(eps)*inDegree)/180;
     }  
      
     protected double sin (double x,double epsilon){
@@ -51,6 +56,5 @@ ArithmeticFunctions fn=new ArithmeticFunctions();
         i++; 
         }while(fn.max((predecessor-successor),(successor-predecessor))>eps);
         return (double)successor;
-    } 
-     
+    }
 }

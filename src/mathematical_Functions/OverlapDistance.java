@@ -1,8 +1,12 @@
-package  mathematical_Functions;
 /**
- *
+ * A set of methods to compute the angle and the distance of overlap using 
+ * methods based on scratch code.
+ * 
  * @authors TeamD
- */
+ **/
+
+package  mathematical_Functions;
+
 public class OverlapDistance {
      protected double computeFixedPointRadians(double epsilon){
      TrigonometricFunctions trigo=new TrigonometricFunctions();
