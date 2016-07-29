@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!ELEMENT Cheers (computeOverlapDistance)+>
+    <!ELEMENT computeOverlapDistance (distance,radius,epsilon,computeFixedPoint)+>
+        <!ELEMENT distance (#PCDATA) >
+        <!ELEMENT radius (#PCDATA) > 
+        <!ATTLIST radius  value CDATA #REQUIRED > 
+        <!ELEMENT epsilon (#PCDATA)>
+        <!ATTLIST epsilon name NMTOKEN #FIXED "1.OE-7" >
+        <!ELEMENT computeFixedPoint (epsilon,x0,angle)+ >
+        <!ELEMENT x0 (#PCDATA) >
+        <!ELEMENT angle (#PCDATA) >
+
+
+

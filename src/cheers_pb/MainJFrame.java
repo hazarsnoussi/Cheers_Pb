@@ -1,9 +1,14 @@
 /**
 *A Frame that print  
 *the result of our  approximation (angle and distance of overlap ) for an inputed
-* radius  @authors TeamD
+* radius  
 **/
 package cheers_pb;
+
+/**
+ *
+ * @authors TeamD
+ */
 
 import mathematical_Functions.OverlapDistance;
 
@@ -158,13 +163,14 @@ public class MainJFrame extends javax.swing.JFrame {
     }                                          
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        double epsilon=1.0E-6;      
+        double epsilon=1.0E-6;
+        double root=2.0d;
         
         OverlapDistance dis=new OverlapDistance(); 
-        double radius=0;
+        double radius=-1;
+         
         try{
             radius=Double.parseDouble(textField1.getText()); 
-             
         }
         catch(NumberFormatException e){
             label10.setForeground(new java.awt.Color(255, 0, 51));
@@ -173,19 +179,18 @@ public class MainJFrame extends javax.swing.JFrame {
         }
         finally{
             if ((radius>0)&&(radius<=20)){
-            textField2.setText(dis.getFixedPointRadians(epsilon));
-            textField3.setText(dis.getOverlapDistance(radius, epsilon)); 
+            textField2.setText(dis.getFixedPointRadians(root,epsilon));
+            textField3.setText(dis.getOverlapDistance(radius,root, epsilon)); 
             label10.setForeground(new java.awt.Color(0, 0, 0));
             }
             else{
             label10.setForeground(new java.awt.Color(255, 0, 51));
-            textField2.setText(dis.getFixedPointRadians(epsilon));
+            textField2.setText(dis.getFixedPointRadians(root,epsilon));
             textField3.setText("0");
-            }
+            }  
         }
-    }                                       
-
-    
+    } 
+  
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -210,8 +215,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
     }
-
-                   
+          
     private java.awt.Button button1;
     private java.awt.Label label1;
     private java.awt.Label label10;

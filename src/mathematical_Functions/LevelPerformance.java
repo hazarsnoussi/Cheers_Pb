@@ -1,35 +1,41 @@
 /**
  * A set of methods to test the performance of our approximation for a given 
  * radius by computing the absolute error between our results and the the 
- * results based on the class java.lang.Math.
+ * results based on e class java.lang.Math.
  * Beside it returns the Java version installed in the current machine, 
  * its OS name and its version
- * 
- * @authors TeamD
  **/
+
 package mathematical_Functions;
+
+/**
+ *
+ * @authors TeamD
+ */
 import java.util.Scanner;
 
 public class LevelPerformance {
     
-    public double readRadius(double radius){
+    public double readRadius(){
+        
         Scanner sc=new Scanner(System.in);
+        double radius=-1;
+     do    
      try{
-         System.out.println("Please, input a radius in [1..20]");   
-         radius=Double.parseDouble(sc.nextLine());    
-        }
+         System.out.println("Please, input a radius between [1..20]");   
+         radius = Double.parseDouble(sc.nextLine());    
+         }
+     
      catch(NumberFormatException e){
          System.out.println("The input radius wasn't in [1..20]");
+         radius=-1;
         }
+     
      finally{
          if ((radius>0)&&(radius<=20))
          System.out.println("Correct value for the radius");
-         else {
-            radius=1;
-            System.out.println("The radius will be = "+ radius);
-            
-            }
-         }
+        
+     }while ((radius <=0)||(radius>20) );
      return radius;
     }
     
@@ -40,9 +46,10 @@ public class LevelPerformance {
         Incarnation2 Inc=new Incarnation2();
         OverlapDistance Odis= new OverlapDistance();
         double nilakantahPi = trigo.nilakantahPI(epsilon);
+        double root=2.0d;
         
-        System.out.println("The Java version is : "+System.getProperty("java.version")+
-       "\nThe Os name and version : "+System.getProperty("os.name")+System.getProperty("os.version"));
+        System.out.println("The Java version of java  is : "+System.getProperty("java.version")+
+       "\nThe current Os name and version are  : "+System.getProperty("os.name")+System.getProperty("os.version"));
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("Values of testing parameters : Radius = "+radius+" & Epselon= "+epsilon);    
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
@@ -55,16 +62,16 @@ public class LevelPerformance {
                                                       ((0.5*Math.PI*Math.pow(radius, 2))-(0.5*nilakantahPi*fn.power(radius,2)))));
         System.out.println("=============================================================================");
          
-        double approxFixedPoint=Odis.computeFixedPointRadians(epsilon);
-        double exactFixedPoint=Inc.computeFixedPointRadians(epsilon);
+        double approxFixedPoint=Odis.computeFixedPointRadians(epsilon,2.0);
+        double exactFixedPoint=Inc.computeFixedPointRadians(root,epsilon);
         System.out.println("Approximative value of the fixed point in Radians = "+approxFixedPoint
                           + "\nThe value of the fixed point using Math.sin() "
                           + "\n& Math.PI with incarnation 2 functions = "+exactFixedPoint);   
         System.out.println("Asolute error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
                                                                                      ,(exactFixedPoint-approxFixedPoint)));                                             
         System.out.println("=============================================================================");
-        double approxOverlap=Odis.computeOverlapDistance(radius,epsilon);
-        double exactOverlap=Inc.computeOverlapDistance(radius,epsilon);
+        double approxOverlap=Odis.computeOverlapDistance(radius,root,epsilon);
+        double exactOverlap=Inc.computeOverlapDistance(radius,root,epsilon);
         System.out.println("Approximation of the overlap distance= " +approxOverlap+
                             "\nThe distance using Math.cos() and incarnation 2 functions = "+exactOverlap);
         System.out.println("Asolute error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap));

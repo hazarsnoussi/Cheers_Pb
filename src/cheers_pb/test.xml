@@ -1,0 +1,13 @@
+<!DOCTYPE Cheers SYSTEM "testDtd.dtd">
+<Cheers>
+    <computeOverlapDistance>
+        <distance>1.39</distance>
+        <radius value="2"></radius>
+        <epsilon> 1.0E-7</epsilon>
+        <computeFixedPoint>
+            <epsilon>1.0E-7</epsilon>
+            <x0> 2 </x0>
+            <angle> 1.59</angle>
+        </computeFixedPoint>
+    </computeOverlapDistance>
+</Cheers>

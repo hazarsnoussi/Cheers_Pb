@@ -1,9 +1,14 @@
 /**
  * A set of trigonometric functions made form scratch code 
- * @authors TeamD
  **/
 
 package mathematical_Functions;
+
+/**
+ *
+ * @authors TeamD
+ */
+
 
 public class TrigonometricFunctions {
     

@@ -1,10 +1,15 @@
 /**
  * A set of some useful arithmetic functions made form scratch code.
  * 
- * @authors TeamD
  **/
 
 package  mathematical_Functions;
+
+/**
+ *
+ * @authors TeamD
+ */
+
 
 public class ArithmeticFunctions {
 //An ArithmeticException exception is thrown if abs(n) > 999999999
