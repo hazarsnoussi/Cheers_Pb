@@ -5,31 +5,43 @@
  * Beside it returns the Java version installed in the current machine, 
  * its OS name and its version
  **/
-
 package mathematical_Functions;
 
 /**
  *
- * @authors TeamD
+ * @author TeamD
  */
-import java.util.Scanner;
 
+import java.util.Scanner;
+import java.lang.Exception;
+
+/**
+ *
+ * @author TeamD
+ */
 public class LevelPerformance {
     
-    public double readRadius(){
+    /**
+     *
+     * @return a set of comparative results between Cheers approximation and 
+     * java predefined function
+     */
+    public double readRadius()throws NumberFormatException{
         
         Scanner sc=new Scanner(System.in);
-        double radius=-1;
+        double radius=-1;      
      do    
      try{
          System.out.println("Please, input a radius between [1..20]");   
-         radius = Double.parseDouble(sc.nextLine());    
+         radius = Double.parseDouble(sc.nextLine());
          }
      
-     catch(NumberFormatException e){
-         System.out.println("The input radius wasn't in [1..20]");
+    catch (NumberFormatException exception1){ 
+         if ((radius>20)||(radius<0)){
+         System.out.println("The input radius wasn't in []");
          radius=-1;
-        }
+         }
+    }
      
      finally{
          if ((radius>0)&&(radius<=20))
@@ -39,6 +51,11 @@ public class LevelPerformance {
      return radius;
     }
     
+    /**
+     *
+     * @param radius to be inputed by the user
+     * @param epsilon fixed to 1.0E-7
+     */
     public void print_error(double radius, double epsilon){
        
         TrigonometricFunctions trigo=new TrigonometricFunctions();

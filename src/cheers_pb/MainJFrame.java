@@ -12,8 +12,16 @@ package cheers_pb;
 
 import mathematical_Functions.OverlapDistance;
 
+/**
+ *
+ * @author TeamD
+ */
 public class MainJFrame extends javax.swing.JFrame {
 
+    /**
+     * A frame designed to describe the project 
+     * prints the angle and the distance of overlap
+     */
     public MainJFrame() {
         initComponents();
     }
@@ -62,7 +70,7 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        label7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label7.setFont(new java.awt.Font("Dialog", 1, 12)); 
         label7.setText("Approximation of the angle in Radians :");
 
         textField2.addActionListener(new java.awt.event.ActionListener() {
@@ -71,13 +79,13 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        label8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        label8.setFont(new java.awt.Font("Dialog", 1, 12)); 
         label8.setText("Approximation of the overlap distance : ");
 
-        label9.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
+        label9.setFont(new java.awt.Font("Dialog", 2, 12)); 
         label9.setText("N.B.Approximation based on a tolerence error equals to 1.0E-7.");
 
-        label10.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
+        label10.setFont(new java.awt.Font("Dialog", 2, 12)); 
         label10.setText("Radius should be between 1 and 20");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,6 +199,10 @@ public class MainJFrame extends javax.swing.JFrame {
         }
     } 
   
+    /**
+     *
+     * @param args Java standard main function parameters
+     */
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
