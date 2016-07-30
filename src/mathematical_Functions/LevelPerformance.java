@@ -36,7 +36,7 @@ public class LevelPerformance {
          radius = Double.parseDouble(sc.nextLine());
          }
      
-    catch (NumberFormatException exception1){ 
+    catch (NumberFormatException exception){ 
          if ((radius>20)||(radius<0)){
          System.out.println("The input radius wasn't in []");
          radius=-1;
