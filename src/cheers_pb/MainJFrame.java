@@ -18,7 +18,7 @@ public class MainJFrame extends javax.swing.JFrame {
   
     /**
  *
- * @authors TeamD
+ * @author TeamD
  */
 
 
