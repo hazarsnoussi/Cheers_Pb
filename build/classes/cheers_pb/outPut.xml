@@ -1,4 +1,4 @@
-<!DOCTYPE Cheers SYSTEM "testDtd.dtd">
+<!DOCTYPE Cheers SYSTEM "outPutDtd.dtd">
 <Cheers>
     <computeOverlapDistance>
         <distance>1.39</distance>
