@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>MainJFrame.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Cheers_pb&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">cheers_pb</a> &gt; <span class="el_source">MainJFrame.java</span></div><h1>MainJFrame.java</h1><pre class="source lang-java linenums">/*
+ * This class is a frame that computes the overlap distance between  2 coasters
+ * in conformity to CHEERS requirements.
+ * It integrates also a visualization of the 2 overlapping coasters.
+ */
+package cheers_pb;
+
+import mathematical_Functions.OverlapDistance;
+import java.awt.*;
+import javax.swing.*;
+
+
+/**
+ *
+ * @author TeamD
+ */
+public class MainJFrame extends javax.swing.JFrame {
+  
+    /**
+ *
+ * @author TeamD
+ */
+
+
+
+<span class="fc" id="L26">    public MainJFrame() {</span>
+<span class="fc" id="L27">        initComponents();</span>
+<span class="fc" id="L28">    }</span>
+
+                        
+    private void initComponents() {
+
+<span class="fc" id="L33">        label2 = new java.awt.Label();</span>
+<span class="fc" id="L34">        label3 = new java.awt.Label();</span>
+<span class="fc" id="L35">        label1 = new java.awt.Label();</span>
+<span class="fc" id="L36">        label4 = new java.awt.Label();</span>
+<span class="fc" id="L37">        label5 = new java.awt.Label();</span>
+<span class="fc" id="L38">        textField1 = new java.awt.TextField();</span>
+<span class="fc" id="L39">        button1 = new java.awt.Button();</span>
+<span class="fc" id="L40">        label7 = new java.awt.Label();</span>
+<span class="fc" id="L41">        textField2 = new java.awt.TextField();</span>
+<span class="fc" id="L42">        label8 = new java.awt.Label();</span>
+<span class="fc" id="L43">        textField3 = new java.awt.TextField();</span>
+<span class="fc" id="L44">        label9 = new java.awt.Label();</span>
+<span class="fc" id="L45">        label10 = new java.awt.Label();</span>
+<span class="fc" id="L46">        button3 = new java.awt.Button();</span>
+        
+<span class="fc" id="L48">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="fc" id="L49">        setResizable(false);</span>
+<span class="fc" id="L50">        setTitle(&quot;An approximation of CHEERS problem&quot;);</span>
+<span class="fc" id="L51">        setFont(new java.awt.Font(&quot;Calibri&quot;, 1, 12)); </span>
+<span class="fc" id="L52">        setLocation(new java.awt.Point(250,250));</span>
+
+<span class="fc" id="L54">        label2.setFont(new java.awt.Font(&quot;Comic Sans MS&quot;, 0, 12)); </span>
+<span class="fc" id="L55">        label2.setText(&quot;         The CHEERS project aims to approximate  the distance from which two &quot;);</span>
+
+<span class="fc" id="L57">        label3.setFont(new java.awt.Font(&quot;Comic Sans MS&quot;, 0, 12)); </span>
+<span class="fc" id="L58">        label3.setText(&quot;identical coasters need to be moved on top of each other such that the area&quot;);</span>
+
+<span class="fc" id="L60">        label1.setFont(new java.awt.Font(&quot;Comic Sans MS&quot;, 0, 12)); </span>
+<span class="fc" id="L61">        label1.setText(&quot;of the overlapping region is half the area of any one of the coasters.&quot;);</span>
+
+<span class="fc" id="L63">        label4.setFont(new java.awt.Font(&quot;Algerian&quot;, 1, 14));</span>
+<span class="fc" id="L64">        label4.setText(&quot;Cheers&quot;);</span>
+
+<span class="fc" id="L66">        label5.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 12)); </span>
+<span class="fc" id="L67">        label5.setText(&quot;Radius of the coster in cm : &quot;);</span>
+        
+
+<span class="fc" id="L70">        button1.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 12)); </span>
+<span class="fc" id="L71">        button1.setLabel(&quot;Compute&quot;);</span>
+<span class="fc" id="L72">        button1.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L74">                button1ActionPerformed(evt);</span>
+<span class="nc" id="L75">            }</span>
+        });
+
+<span class="fc" id="L78">        label7.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 12)); </span>
+<span class="fc" id="L79">        label7.setText(&quot;Approximation of the angle in Radians :&quot;);</span>
+
+<span class="fc" id="L81">        textField2.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L83">                textField2ActionPerformed(evt);</span>
+<span class="nc" id="L84">            }</span>
+        });
+
+<span class="fc" id="L87">        label8.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 12)); </span>
+<span class="fc" id="L88">        label8.setText(&quot;Approximation of the overlap distance : &quot;);</span>
+
+<span class="fc" id="L90">        label9.setFont(new java.awt.Font(&quot;Dialog&quot;, 2, 12)); </span>
+<span class="fc" id="L91">        label9.setText(&quot;N.B.Approximation based on a tolerence error equals to 1.0E-7.&quot;);</span>
+
+<span class="fc" id="L93">        label10.setFont(new java.awt.Font(&quot;Dialog&quot;, 2, 12)); </span>
+<span class="fc" id="L94">        label10.setText(&quot;Radius should be between 1 and 20&quot;);</span>
+
+<span class="fc" id="L96">        button3.setFont(new java.awt.Font(&quot;Dialog&quot;, 1, 12)); </span>
+<span class="fc" id="L97">        button3.setLabel(&quot;Visualize&quot;);</span>
+<span class="fc" id="L98">        button3.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="fc" id="L100">                button3ActionPerformed(evt);</span>
+<span class="fc" id="L101">            }</span>
+        });
+
+<span class="fc" id="L104">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="fc" id="L105">        setSize(new java.awt.Dimension(500, 500));</span>
+<span class="fc" id="L106">        getContentPane().setLayout(layout);</span>
+<span class="fc" id="L107">        layout.setHorizontalGroup(</span>
+<span class="fc" id="L108">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L109">            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L110">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L111">                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L112">                        .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L113">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L114">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L115">                                .addGap(193, 193, 193)</span>
+<span class="fc" id="L116">                                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L117">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L118">                                .addContainerGap()</span>
+<span class="fc" id="L119">                                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L120">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L121">                                .addContainerGap()</span>
+<span class="fc" id="L122">                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L123">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()</span>
+<span class="fc" id="L124">                                        .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L125">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L126">                                        .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L127">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()</span>
+<span class="fc" id="L128">                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L129">                                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L130">                                            .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L131">                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L132">                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="fc" id="L133">                                            .addComponent(textField2, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)</span>
+<span class="fc" id="L134">                                            .addComponent(textField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))</span>
+<span class="fc" id="L135">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L136">                                .addContainerGap()</span>
+<span class="fc" id="L137">                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L138">                                    .addComponent(label2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L139">                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="fc" id="L140">                                        .addComponent(label3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="fc" id="L141">                                        .addComponent(label1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))</span>
+<span class="fc" id="L142">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L143">                        .addContainerGap()</span>
+<span class="fc" id="L144">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L145">                            .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L146">                            .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="fc" id="L147">                .addContainerGap(42, Short.MAX_VALUE))</span>
+        );
+<span class="fc" id="L149">        layout.setVerticalGroup(</span>
+<span class="fc" id="L150">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L151">            .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L152">                .addContainerGap()</span>
+<span class="fc" id="L153">                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L154">                .addGap(20, 20, 20)</span>
+<span class="fc" id="L155">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L156">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L157">                        .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L158">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L159">                        .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L160">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L161">                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L162">                        .addGap(37, 37, 37)</span>
+<span class="fc" id="L163">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L164">                            .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L165">                            .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="fc" id="L166">                    .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L167">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L168">                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L169">                .addGap(21, 21, 21)</span>
+<span class="fc" id="L170">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)</span>
+<span class="fc" id="L171">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="fc" id="L172">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="fc" id="L173">                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L174">                            .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L175">                        .addGap(19, 19, 19)</span>
+<span class="fc" id="L176">                        .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L177">                    .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="fc" id="L178">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="fc" id="L179">                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L180">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)</span>
+<span class="fc" id="L181">                .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="fc" id="L182">                .addContainerGap())</span>
+        );
+
+<span class="fc" id="L185">        label9.getAccessibleContext().setAccessibleName(&quot;f1&quot;);</span>
+
+<span class="fc" id="L187">        pack();</span>
+<span class="fc" id="L188">    }                      </span>
+
+    private void textField2ActionPerformed(java.awt.event.ActionEvent evt) {                                           
+
+<span class="nc" id="L192">    }                                          </span>
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {                                        
+<span class="nc" id="L195">        double epsilon=1.0E-6;</span>
+<span class="nc" id="L196">        double root=2.0d;</span>
+        
+<span class="nc" id="L198">        OverlapDistance dis=new OverlapDistance(); </span>
+<span class="nc" id="L199">        double radius=-1;</span>
+         
+        try{
+<span class="nc" id="L202">            radius=Double.parseDouble(textField1.getText()); </span>
+        }
+<span class="nc" id="L204">        catch(NumberFormatException e){</span>
+<span class="nc" id="L205">            label10.setForeground(new java.awt.Color(255, 0, 51));</span>
+<span class="nc" id="L206">            textField2.setText(&quot;0&quot;);</span>
+<span class="nc" id="L207">            textField3.setText(&quot;0&quot;);</span>
+<span class="nc" id="L208">            textField2.setEditable(false);</span>
+<span class="nc" id="L209">            textField3.setEditable(false);</span>
+        }
+        finally{
+<span class="nc bnc" id="L212" title="All 12 branches missed.">            if ((radius&gt;0)&amp;&amp;(radius&lt;=20)){</span>
+<span class="nc" id="L213">            textField2.setText(dis.getFixedPointRadians(root,epsilon));</span>
+<span class="nc" id="L214">            textField3.setText(dis.getOverlapDistance(radius,root, epsilon));</span>
+<span class="nc" id="L215">            textField2.setEditable(false);</span>
+<span class="nc" id="L216">            textField3.setEditable(false);</span>
+<span class="nc" id="L217">            label10.setForeground(new java.awt.Color(0, 0, 0));</span>
+            }
+            else{
+<span class="nc" id="L220">            label10.setForeground(new java.awt.Color(255, 0, 51));</span>
+<span class="nc" id="L221">            textField2.setText(&quot;0&quot;);</span>
+<span class="nc" id="L222">            textField3.setText(&quot;0&quot;);</span>
+<span class="nc" id="L223">            textField2.setEditable(false);</span>
+<span class="nc" id="L224">            textField3.setEditable(false);</span>
+            }  
+<span class="nc" id="L226">        }</span>
+<span class="nc" id="L227">    }                                       </span>
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {    
+<span class="fc" id="L230">    double radius=-1;   </span>
+        try{
+<span class="fc" id="L232">            radius = Double.parseDouble(textField1.getText()); </span>
+        }
+<span class="nc" id="L234">        catch(NumberFormatException e){</span>
+<span class="nc" id="L235">            label10.setForeground(new java.awt.Color(255, 0, 51));</span>
+<span class="nc" id="L236">            textField2.setText(&quot;0&quot;);</span>
+<span class="nc" id="L237">            textField3.setText(&quot;0&quot;);</span>
+<span class="nc" id="L238">            textField2.setEditable(false);</span>
+<span class="nc" id="L239">            textField3.setEditable(false);</span>
+        }
+          
+        finally{
+<span class="pc bpc" id="L243" title="10 of 12 branches missed.">        if((radius&gt;0)&amp;&amp;(radius&lt;=20)){</span>
+<span class="pc" id="L244">        JFrame window = new JFrame(&quot;CHEERS Visualizatiion&quot;);</span>
+<span class="pc" id="L245">        DrawPanel drawingArea = new DrawPanel();</span>
+<span class="pc" id="L246">        drawingArea.setBackground(Color.white);</span>
+<span class="pc" id="L247">        window.setContentPane(drawingArea);</span>
+       
+<span class="pc" id="L249">        drawingArea.setPreferredSize(new Dimension(660,660));</span>
+<span class="pc" id="L250">        window.pack();</span>
+<span class="pc" id="L251">        window.setLocation(100,50);</span>
+<span class="pc" id="L252">        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="pc" id="L253">        window.setResizable(false);</span>
+<span class="pc" id="L254">        window.setVisible(true);</span>
+<span class="pc" id="L255">        }</span>
+        }   
+<span class="fc" id="L257">    }</span>
+    
+    public static void main(String args[]) {
+        try {
+<span class="pc bpc" id="L261" title="1 of 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="fc bfc" id="L262" title="All 2 branches covered.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="fc" id="L263">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="fc" id="L264">                    break;</span>
+                }
+            }
+<span class="nc" id="L267">        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L268">            java.util.logging.Logger.getLogger(MainJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="fc" id="L269">        }</span>
+
+<span class="fc" id="L271">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+            public void run() {
+<span class="fc" id="L273">                MainJFrame mainFrame =  new MainJFrame();</span>
+<span class="fc" id="L274">                       mainFrame.setVisible(true);</span>
+                
+<span class="fc" id="L276">            }</span>
+        });
+<span class="fc" id="L278">    }</span>
+
+    // Variables declaration                     
+    private java.awt.Button button1;
+    private java.awt.Button button3;
+    private java.awt.Label label1;
+    private java.awt.Label label10;
+    private java.awt.Label label2;
+    private java.awt.Label label3;
+    private java.awt.Label label4;
+    private java.awt.Label label5;
+    private java.awt.Label label7;
+    private java.awt.Label label8;
+    private java.awt.Label label9;
+    public static java.awt.TextField textField1;
+    private java.awt.TextField textField2;
+    private java.awt.TextField textField3;
+                    
+}  
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ArithmeticFunctions.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Cheers_pb&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">mathematical_Functions</a> &gt; <span class="el_source">ArithmeticFunctions.java</span></div><h1>ArithmeticFunctions.java</h1><pre class="source lang-java linenums">/**
+ * A set of some useful arithmetic functions made form scratch code.
+ * 
+ **/
+package  mathematical_Functions;
+
+/**
+ *
+ * @author TeamD
+ */
+
+<span class="fc" id="L12">public class ArithmeticFunctions {</span>
+//An ArithmeticException exception is thrown if abs(n) &gt; 999999999
+
+    /**
+     *
+     * @param a that will be raised to a power n 
+     * @param n the value of the exponent 
+     * @return a to power n 
+     */
+        protected double power(double a,int n){
+<span class="fc bfc" id="L22" title="All 2 branches covered.">      if (n==0) return 1;</span>
+              else {
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                   if(n%2==0)</span>
+<span class="fc" id="L25">                   return(double)(power(a,n/2)*power(a,n/2));</span>
+<span class="fc" id="L26">                   else return (double)(a*power(a,n/2)*power(a,n/2));</span>
+                   }
+    }
+     
+    /**
+     *
+     * @param n the input for factorial method
+     * @return factorial of n 
+     */
+    protected double factorial(int n){
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (n==0) return 1;</span>
+<span class="fc" id="L37">        else return (double)(n*factorial(n-1));</span>
+    }
+    
+    /**
+     *
+     * @param a input for max method
+     * @param b input for max method
+     * @return the greater value between 2 given numbers
+     */
+    protected double max(double a, double b){
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (a-b&lt;0)</span>
+<span class="fc" id="L48">        return b;</span>
+<span class="fc" id="L49">        else return a;</span>
+    }
+    
+    /**
+     *
+     * @param x input to be converted in radians
+     * @param epsilon fixed to 1.0E-7
+     * @return sin(x)+pi/2
+     */
+    protected double fxRadians(double x,double epsilon){
+<span class="fc" id="L59">        TrigonometricFunctions trigo=new TrigonometricFunctions();</span>
+<span class="fc" id="L60">        return (double)(trigo.sin(trigo.toRadians(x,epsilon),epsilon)+0.5*trigo.nilakantahPI(epsilon));</span>
+    }  
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

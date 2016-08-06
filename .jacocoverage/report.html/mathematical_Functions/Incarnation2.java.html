@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Incarnation2.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Cheers_pb&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">mathematical_Functions</a> &gt; <span class="el_source">Incarnation2.java</span></div><h1>Incarnation2.java</h1><pre class="source lang-java linenums">/**
+ * A set of methods to compute the angle and the distance of overlap using 
+ * the predefined methods the class java.lang.Math.
+ **/
+package mathematical_Functions;
+
+/**
+ *
+ * @author TeamD
+ */
+
+<span class="nc" id="L12">public class Incarnation2 {</span>
+
+    /**
+     *
+     * @param degrees input in degrees 
+     * @return the equivalent value in radians 
+     * returns fxRadians(x)=sin(x)+pi/2
+     * using java.lang.Math methods
+     */
+    protected double fxRadians(double degrees){
+<span class="nc" id="L22">        return (double)(0.5*Math.PI)+Math.sin(Math.toRadians(degrees));</span>
+    }
+    
+    /**
+     *
+     * @param root value is not arbitrary 
+     * but extracted from the graph of F(x)-x=0 
+     * root will be equal to 2 in our program
+     * root value is not arbitrary 
+     * but extracted from the graph of F(x)-x=0 
+     * root will be equal to 2 in our program
+     * @param epsilon will be equal to 1.0E-7 for optimization purpose
+     * @return the x0 where f(x0)=x0
+     * It aims to return the root of any : F(x)-x=0 if F fits the requirements 
+     * of the Intermediate Values Theorem
+     */
+    protected double computeFixedPointRadians(double root,double epsilon){
+    
+        double x;
+<span class="nc" id="L41">        double x0=root;</span>
+        do {
+<span class="nc" id="L43">        x=x0;</span>
+<span class="nc" id="L44">        x0=fxRadians(x);</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        }while( Math.abs(x-x0)&gt;epsilon);</span>
+<span class="nc" id="L46">        System.out.println(fxRadians(x0));</span>
+<span class="nc" id="L47">        return (double)(x0);   </span>
+    }
+    /**
+     *
+     * @param radius to be inputed by user 
+     * @param root value of initialization of x0, initialized to 2 
+     * @param epsilon fixed to 1.0E-7
+     * @return the distance of overlap between the 2 coasters to satisfy the
+     * requirements of the problem
+     * returns l=2*R*(1-cos(x/2))
+     */
+    protected double computeOverlapDistance(double radius,double root,double epsilon){
+<span class="nc" id="L59">        return (double)(2*radius*(1-Math.cos(0.5*computeFixedPointRadians(root,epsilon))));</span>
+       
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

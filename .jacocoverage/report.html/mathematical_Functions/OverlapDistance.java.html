@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>OverlapDistance.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Cheers_pb&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">mathematical_Functions</a> &gt; <span class="el_source">OverlapDistance.java</span></div><h1>OverlapDistance.java</h1><pre class="source lang-java linenums">/**
+ * A set of methods to compute the angle and the distance of overlap using 
+ * methods based on scratch code.
+ **/
+package  mathematical_Functions;
+
+/**
+ *
+ * @author TeamD
+ */
+
+<span class="fc" id="L12">public class OverlapDistance {</span>
+
+    /**
+     *
+     * @param root initial value of x0, for F it will be initialized to 2
+     * according to its graph
+     * @param epsilon fixed to 1.0E-7
+     * @return the root of any : F(x)-x=0 if F fits the requirements 
+     * of the Intermediate Values Theorem
+     */
+    protected double computeFixedPointRadians(double root,double epsilon) {
+<span class="fc" id="L23">     TrigonometricFunctions trigo=new TrigonometricFunctions();</span>
+<span class="fc" id="L24">     ArithmeticFunctions fn=new ArithmeticFunctions();</span>
+     double x0;
+        do{
+<span class="fc" id="L27">         x0= root;</span>
+<span class="fc" id="L28">         root=fn.fxRadians(x0,epsilon);</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        } while((fn.max((x0-root),(root-x0))&gt;epsilon));  </span>
+<span class="fc" id="L30">    return(double)x0;   </span>
+    } 
+   
+    /**
+     *
+     * @param epsilon fixed to 1.0e_7
+     * @param root initial value of x0 
+     * @return the equivalent String value of the angle 
+     * used only in the class MainJFrame to set the value of the correspondent 
+     * field text
+     */
+    public String getFixedPointRadians(double root,double epsilon){
+<span class="nc" id="L42">       return String.valueOf(computeFixedPointRadians(root,epsilon));</span>
+    } 
+    
+    /**
+     *
+     * @param radius to be inputed by the user 
+     * @param root value of initialization of x0, initialized to 2
+     * @param epsilon fixed to 1.0E-7
+     * @return the overlap distance
+     */
+    protected double computeOverlapDistance(double radius,double root, double epsilon){
+      
+<span class="fc" id="L54">    TrigonometricFunctions trigo=new TrigonometricFunctions();</span>
+<span class="fc" id="L55">    return(double)(2*radius*(1-trigo.cos((0.5*computeFixedPointRadians(root,epsilon)),epsilon)));   </span>
+    } 
+    
+    /**
+     *
+     * @param radius to be inputed by user
+     * @param root initial value of x0 
+     * @param epsilon fixed to 1.0E-7
+     * @return the equivalent string value of the distance of overlap
+     * used only in MainJFrame class to set the value of the correspondent 
+     * filed text 
+     */
+    public String getOverlapDistance(double radius, double root,double epsilon){
+<span class="fc" id="L68">    return String.valueOf(computeOverlapDistance(radius,root,epsilon));</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

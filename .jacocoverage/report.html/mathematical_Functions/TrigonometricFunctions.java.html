@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TrigonometricFunctions.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Cheers_pb&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">mathematical_Functions</a> &gt; <span class="el_source">TrigonometricFunctions.java</span></div><h1>TrigonometricFunctions.java</h1><pre class="source lang-java linenums">/**
+ * A set of trigonometric functions made form scratch code 
+ **/
+package mathematical_Functions;
+
+/**
+ *
+ * @author TeamD
+ */
+
+<span class="fc" id="L11">public class TrigonometricFunctions {</span>
+    
+<span class="fc" id="L13">ArithmeticFunctions fn=new ArithmeticFunctions();   </span>
+  
+    /**
+     *
+     * @param epsilon fixed to 1.0e-7
+     * @return an approximate value of PI using Nilakantah formula 
+     * π=3+(4/2*3*4)-4/(4*5*6)+4/(6*7*8)-4/(8*9*10)...
+     */
+    protected double nilakantahPI(double epsilon){
+    
+<span class="fc" id="L23">    double successor=3.d;</span>
+<span class="fc" id="L24">    double predecessor=0.d;</span>
+<span class="fc" id="L25">    int i=2;</span>
+  
+     do {
+<span class="fc" id="L28">        predecessor=successor;</span>
+<span class="fc" id="L29">        successor=predecessor+(double)((double)fn.power(-1,1+i/2)*(double)(4/(double)(i*(i+1)*(i+2))));                   </span>
+<span class="fc" id="L30">        i+=2;</span>
+       
+<span class="fc bfc" id="L32" title="All 2 branches covered.">     }while(fn.max(predecessor-successor,successor-predecessor)&gt;epsilon);</span>
+<span class="fc" id="L33">    return (double)predecessor;            </span>
+    }
+    
+     /**
+     *
+     * @param epsilon fixed to 1.0E-7
+     * print the value of PI through Nilakantah method
+     */
+    public void getPiNilakantah(double epsilon){
+<span class="nc" id="L42">    System.out.println(&quot;Approximative value of PI via Nilakantah formula = &quot;+nilakantahPI(epsilon));</span>
+<span class="nc" id="L43">    }</span>
+ 
+    /**
+     *
+     * @param inDegree degree value to be converted in radians
+     * @param eps fixed to 1.0E-7
+     * @return the equivalent value in radians
+     */
+    protected double toRadians(double inDegree,double eps){
+<span class="fc" id="L52">    return(double)(nilakantahPI(eps)*inDegree)/180;</span>
+    }  
+     
+    /**
+     *
+     * @param x value given to sine to compute sin(x)
+     * @param epsilon fixed to 1.0E-7
+     * @return sin(x)
+     * using Taylor formula sin (x) = x - (x3/3!) + (x5/5!) - (x7/7!)...
+     */
+    protected double sin (double x,double epsilon){
+<span class="fc" id="L63">        int i=1;</span>
+        double predecessor;
+<span class="fc" id="L65">        double successor =x;</span>
+        do{
+<span class="fc" id="L67">            predecessor=successor;</span>
+<span class="fc" id="L68">            successor=predecessor+(double)(fn.power(-1,i))*(fn.power(x,2*i+1)/fn.factorial(2*i+1));</span>
+<span class="fc" id="L69">            i++;</span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        }while(fn.max((predecessor-successor),(successor-predecessor))&gt;epsilon);</span>
+<span class="fc" id="L71">        return (double) predecessor;</span>
+    }
+   
+    /**
+     *
+     * @param x input for the sine 
+     * @param eps fixed to 1.0E-7
+     * @return cos(x)
+     * using Taylor_cos(x)=1-x2/2!+x4/4!-x6/6!...
+     */
+    protected double cos(double x,double eps){
+<span class="fc" id="L82">        int i=1;</span>
+        double predecessor;
+<span class="fc" id="L84">        double successor=1.d;</span>
+        do {
+<span class="fc" id="L86">        predecessor=successor;</span>
+<span class="fc" id="L87">        successor= predecessor+(double)((double)fn.power(-1,i)*(double)((double)fn.power(x,2*i)/(double)fn.factorial(2*i)));</span>
+<span class="fc" id="L88">        i++; </span>
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        }while(fn.max((predecessor-successor),(successor-predecessor))&gt;eps);</span>
+<span class="fc" id="L90">        return (double)successor;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
