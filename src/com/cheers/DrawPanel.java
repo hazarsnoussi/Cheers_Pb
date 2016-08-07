@@ -106,7 +106,7 @@ public class DrawPanel extends javax.swing.JPanel implements ActionListener {
         int radius = (int)Math.round(Double.parseDouble(MainJFrame.textField1.getText()));
        
         OverlapDistance dis = new OverlapDistance(); 
-        int overlapDistance = (int)Math.round(Double.parseDouble(dis.getOverlapDistance(radius,2,1.0E-6)));
+        int overlapDistance = (int)Math.round(Double.parseDouble(dis.getOverlapDistance(radius,2,1.0E-7)));
         int alpha = 20;
         
        // drawOval takes in charge only integer radius
