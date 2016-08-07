@@ -9,7 +9,7 @@ package  com.cheers.math;
  * @author TeamD
  */
 
-public class ArithmeticFunctions {
+public class ArithmeticFunction {
 //An ArithmeticException exception is thrown if abs(n) > 999999999
 
     /**
@@ -56,7 +56,7 @@ public class ArithmeticFunctions {
      * @return sin(x)+pi/2
      */
     protected double fxRadians(double x,double epsilon){
-        TrigonometricFunctions trigo=new TrigonometricFunctions();
+        TrigonometricFunction trigo=new TrigonometricFunction();
         return (double)(trigo.sin(trigo.toRadians(x,epsilon),epsilon)+0.5*trigo.nilakantahPI(epsilon));
     }  
 }

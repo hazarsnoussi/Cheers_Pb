@@ -8,9 +8,9 @@ package com.cheers.math;
  * @author TeamD
  */
 
-public class TrigonometricFunctions {
+public class TrigonometricFunction {
     
-ArithmeticFunctions fn=new ArithmeticFunctions();   
+ArithmeticFunction fn=new ArithmeticFunction();   
   
     /**
      *

@@ -58,8 +58,8 @@ public class LevelPerformance {
      */
     public void print_error(double radius, double epsilon){
        
-        TrigonometricFunctions trigo=new TrigonometricFunctions();
-        ArithmeticFunctions fn=new ArithmeticFunctions();
+        TrigonometricFunction trigo=new TrigonometricFunction();
+        ArithmeticFunction fn=new ArithmeticFunction();
         Incarnation2 Inc=new Incarnation2();
         OverlapDistance Odis= new OverlapDistance();
         double nilakantahPi = trigo.nilakantahPI(epsilon);

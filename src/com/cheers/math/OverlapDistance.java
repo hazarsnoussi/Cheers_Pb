@@ -20,8 +20,8 @@ public class OverlapDistance {
      * of the Intermediate Values Theorem
      */
     protected double computeFixedPointRadians(double root,double epsilon) {
-     TrigonometricFunctions trigo=new TrigonometricFunctions();
-     ArithmeticFunctions fn=new ArithmeticFunctions();
+     TrigonometricFunction trigo=new TrigonometricFunction();
+     ArithmeticFunction fn=new ArithmeticFunction();
      double x0;
         do{
          x0= root;
@@ -51,7 +51,7 @@ public class OverlapDistance {
      */
     protected double computeOverlapDistance(double radius,double root, double epsilon){
       
-    TrigonometricFunctions trigo=new TrigonometricFunctions();
+    TrigonometricFunction trigo=new TrigonometricFunction();
     return(double)(2*radius*(1-trigo.cos((0.5*computeFixedPointRadians(root,epsilon)),epsilon)));   
     } 
     
