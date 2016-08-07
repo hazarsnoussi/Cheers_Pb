@@ -44,7 +44,7 @@ public class DrawPanel extends javax.swing.JPanel implements ActionListener {
 
         label3.setFont(new java.awt.Font("Dialog", 1, 14));
         label3.setForeground(new java.awt.Color(127, 0, 127));
-        label3.setText("& Overlap distance");
+        label3.setText("& Overlap Area");
 
         textField1.setEditable(false);
         textField1.setText(Integer.toString((int)Math.round(Double.parseDouble(MainJFrame.textField1.getText()))));
@@ -107,9 +107,6 @@ public class DrawPanel extends javax.swing.JPanel implements ActionListener {
        
         OverlapDistance dis = new OverlapDistance(); 
         int overlapDistance = (int)Math.round(Double.parseDouble(dis.getOverlapDistance(radius,2,1.0E-6)));
-        //dis.getOverlapDistance(radius, 2, 1.0E-6);
-	//AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER,.8f);
-        // g.setComposite(ac);
         int alpha = 20;
         
        // drawOval takes in charge only integer radius
