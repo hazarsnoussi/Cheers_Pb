@@ -84,14 +84,14 @@ public class LevelPerformance {
         System.out.println("Approximative value of the fixed point in Radians = "+approxFixedPoint
                           + "\nThe value of the fixed point using Math.sin() "
                           + "\n& Math.PI with incarnation 2 functions = "+exactFixedPoint);   
-        System.out.println("Asolute error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
+        System.out.println("Absolute error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
                                                                                      ,(exactFixedPoint-approxFixedPoint)));                                             
         System.out.println("=============================================================================");
         double approxOverlap=Odis.computeOverlapDistance(radius,root,epsilon);
         double exactOverlap=Inc.computeOverlapDistance(radius,root,epsilon);
         System.out.println("Approximation of the overlap distance= " +approxOverlap+
                             "\nThe distance using Math.cos() and incarnation 2 functions = "+exactOverlap);
-        System.out.println("Asolute error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap));
+        System.out.println("Absolute error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap));
         System.out.println("=============================================================================");
     }       
 }
