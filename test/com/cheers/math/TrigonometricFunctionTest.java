@@ -8,7 +8,7 @@ package com.cheers.math;
  * @authors TeamD
  */
 
-import com.cheers.math.TrigonometricFunctions;
+import com.cheers.math.TrigonometricFunction;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
  *
  * @author TeamD
  */
-public class TrigonometricFunctionsTest {
+public class TrigonometricFunctionTest {
     //Test of NilakantahPI method, of class TrigonometricFunctions.
 
     /**
@@ -25,7 +25,7 @@ public class TrigonometricFunctionsTest {
     */
         @Test
     public void testNilakantahPI() {
-        TrigonometricFunctions instance = new TrigonometricFunctions();
+        TrigonometricFunction instance = new TrigonometricFunction();
         assertEquals(Math.PI, instance.nilakantahPI(1.0E-7),1.0E-6);
     }
   
@@ -34,7 +34,7 @@ public class TrigonometricFunctionsTest {
      */
         @Test
     public void testToRadians() {
-        TrigonometricFunctions instance = new TrigonometricFunctions();
+        TrigonometricFunction instance = new TrigonometricFunction();
         assertEquals(Math.toRadians(10), instance.toRadians(10,1E-7),1.0E-6);
     }
 
@@ -43,7 +43,7 @@ public class TrigonometricFunctionsTest {
      */
         @Test
     public void testSin() {
-        TrigonometricFunctions instance = new TrigonometricFunctions();
+        TrigonometricFunction instance = new TrigonometricFunction();
         assertEquals(Math.sin(0.3), instance.sin(0.3,1.0E-7),1.0E-6);
     }
     
@@ -52,7 +52,7 @@ public class TrigonometricFunctionsTest {
      */
         @Test
     public void testCos() {
-        TrigonometricFunctions instance = new TrigonometricFunctions();
+        TrigonometricFunction instance = new TrigonometricFunction();
         assertEquals(Math.cos(0.3), instance.cos(0.3,1.0E-7),1.0E-6);
     }
 }

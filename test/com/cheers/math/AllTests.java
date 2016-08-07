@@ -5,10 +5,10 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ ArithmeticFunctionsTest.class, 
+@SuiteClasses({ ArithmeticFunctionTest.class, 
 				Incarnation2Test.class, 
 				OverlapDistanceTest.class,
-				TrigonometricFunctionsTest.class})
+				TrigonometricFunctionTest.class})
 public class AllTests {
 
 }

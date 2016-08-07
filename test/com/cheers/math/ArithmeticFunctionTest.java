@@ -8,7 +8,7 @@ package com.cheers.math;
  * @authors TeamD
  */
 
-import com.cheers.math.ArithmeticFunctions;
+import com.cheers.math.ArithmeticFunction;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -17,7 +17,7 @@ import org.junit.Test;
  *
  * @author TeamD
  */
-public class ArithmeticFunctionsTest {
+public class ArithmeticFunctionTest {
    
     /**
      * Test of Power method
@@ -25,7 +25,7 @@ public class ArithmeticFunctionsTest {
      */
         @Test
     public void testpower() {
-        ArithmeticFunctions instance = new ArithmeticFunctions();
+        ArithmeticFunction instance = new ArithmeticFunction();
         instance.power(2,3);
         assertEquals(8, instance.power(2,3), 0.0);
     }
@@ -36,7 +36,7 @@ public class ArithmeticFunctionsTest {
      */
         @Test
     public void testfactorial() {
-        ArithmeticFunctions instance = new ArithmeticFunctions();
+        ArithmeticFunction instance = new ArithmeticFunction();
         assertEquals(6,instance.factorial(3), 0.0);
     }
 
@@ -46,7 +46,7 @@ public class ArithmeticFunctionsTest {
      */
         @Test
     public void testMax() {
-        ArithmeticFunctions instance = new ArithmeticFunctions();
+        ArithmeticFunction instance = new ArithmeticFunction();
         assertEquals(5, instance.max(1,5), 0.0);
     }
     

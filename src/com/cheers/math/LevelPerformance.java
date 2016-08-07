@@ -72,26 +72,32 @@ public class LevelPerformance {
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         System.out.println("Approximation of PI by Nilakantah formula = "+ trigo.nilakantahPI(epsilon)+"\nMath.PI = "+Math.PI);
         System.out.println("Absolute error =" +fn.max(nilakantahPi-Math.PI,Math.PI-nilakantahPi));
+        System.out.println("Relative error =" +fn.max(nilakantahPi-Math.PI,Math.PI-nilakantahPi)/Math.PI);
         System.out.println("=============================================================================");  
         System.out.println("Approximation of the half of the area = "+0.5*nilakantahPi*fn.power(radius,2)+
                           "\nThe half of the area using Math.PI & Math.pow "+0.5*Math.PI*Math.pow(radius, 2));
         System.out.println("Absolute error= "+fn.max( ((0.5*nilakantahPi*fn.power(radius,2))-(0.5*Math.PI*Math.pow(radius, 2))),       
                                                       ((0.5*Math.PI*Math.pow(radius, 2))-(0.5*nilakantahPi*fn.power(radius,2)))));
+        System.out.println("Relative error= "+fn.max( ((0.5*nilakantahPi*fn.power(radius,2))-(0.5*Math.PI*Math.pow(radius, 2))),       
+                                                      ((0.5*Math.PI*Math.pow(radius, 2))-(0.5*nilakantahPi*fn.power(radius,2))))/(0.5*Math.PI*Math.pow(radius, 2)));
         System.out.println("=============================================================================");
          
-        double approxFixedPoint=Odis.computeFixedPointRadians(epsilon,2.0);
-        double exactFixedPoint=Inc.computeFixedPointRadians(root,epsilon);
+        double approxFixedPoint=Odis.computeFixedPointRadians(2.0,epsilon);
+        double exactFixedPoint=Inc.computeFixedPointRadians(2.0,epsilon);
         System.out.println("Approximative value of the fixed point in Radians = "+approxFixedPoint
                           + "\nThe value of the fixed point using Math.sin() "
                           + "\n& Math.PI with incarnation 2 functions = "+exactFixedPoint);   
-        System.out.println("Absolute error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
-                                                                                     ,(exactFixedPoint-approxFixedPoint)));                                             
+        System.out.println("Asolute error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
+                                                                                     ,(exactFixedPoint-approxFixedPoint))); 
+        System.out.println("Relative error for the fixed point in Radians = "+fn.max((approxFixedPoint-exactFixedPoint)
+                                                                                     ,(exactFixedPoint-approxFixedPoint))/exactFixedPoint);
         System.out.println("=============================================================================");
         double approxOverlap=Odis.computeOverlapDistance(radius,root,epsilon);
         double exactOverlap=Inc.computeOverlapDistance(radius,root,epsilon);
         System.out.println("Approximation of the overlap distance= " +approxOverlap+
                             "\nThe distance using Math.cos() and incarnation 2 functions = "+exactOverlap);
-        System.out.println("Absolute error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap));
+        System.out.println("Asolute error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap));
+         System.out.println("Realtive error for the length= "+fn.max(approxOverlap-exactOverlap,exactOverlap-approxOverlap)/exactOverlap);
         System.out.println("=============================================================================");
     }       
 }
